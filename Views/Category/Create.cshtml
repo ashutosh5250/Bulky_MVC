@@ -1,0 +1,37 @@
+﻿@model Category
+
+<div class="row">
+    <div class="col-3">
+
+    </div>
+    <div class="col-6">
+        <div class="card">
+            <div class="card-header text-center">
+                <h2>Create Category</h2>
+            </div>
+
+            <form method="post" class="card-body">
+                <div class="mb-3">
+                    <label asp-for="Name" class="form-label" ></label>
+                    <input asp-for="Name" type="text" class="form-control" placeholder="Enter Name" />
+                    <span asp-validation-for="Name"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="DisplayOrder" class="form-label"></label>
+                    <input asp-for="DisplayOrder" type="number" class="form-control" placeholder="Enter Display Order" />
+                    <span asp-validation-for="DisplayOrder"></span>
+                </div>
+
+                <div class="card-footer">
+                    <button type="submit" class="btn btn-primary">Create Category</button>
+                    <button asp-controller="Category" asp-action="index" class="btn btn-secondary">Back to CategoryList</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="col-3">
+    </div>
+</div>
+
+

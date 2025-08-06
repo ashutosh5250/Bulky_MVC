@@ -1,0 +1,35 @@
+﻿@model List<Category>
+<div class="row">
+    <div class="col-6">
+        <h2 class="text-center">CategoryList</h2>
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>DisplayOrder</th>
+
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Id</td>
+                        <td>@item.Name</td>
+                        <td>@item.DisplayOrder</td>
+                        <td>
+                            <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                            <div>@Html.ActionLink("Update", "Update", "Category", new { Id = item.Id })</div>
+                           
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <div class="col-6">
+        <a asp-controller="Category" asp-action="Create">Add Category</a>
+    </div>
+</div>
